@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
+import hocFetch from './todo.fetch'
 import cn from 'classnames'
 
 const Todo = ({
@@ -76,4 +76,4 @@ Todo.defaultProps = {
   onKeyDown: undefined,
 }
 
-export default onlyUpdateForPropTypes(Todo)
+export default hocFetch('https://www.foaas.com/bday/brian/alakarte')(Todo)
