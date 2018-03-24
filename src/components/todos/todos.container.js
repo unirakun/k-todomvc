@@ -1,8 +1,9 @@
-import { inject } from '@k-ramel/react'
+import { connect } from 'react-redux'
+import { getTodos } from '../../store/todos.selectors.js'
 import Component from './todos'
 
-export default inject(store => ({
-  todos: store.data.todos[store.ui.footer.get().filter].getKeys(),
-  allCompleted: store.data.todos.all.getLength() === store.data.todos.completed.getLength(),
-  onCompleteAll: () => store.dispatch('@@ui/HEADER_ON_COMPLETE_ALL'),
-}))(Component)
+const mapStateToProps = (state) => ({
+  todos: getTodos(state),
+})
+
+export default connect(mapStateToProps)(Component)

@@ -2,8 +2,8 @@ import { reaction } from 'k-ramel'
 
 export const load = reaction((action, store) => {
   store.data.todos.all.set([
-    { id: 1, label: 'write README.md', completed: false },
-    { id: 2, label: 'write other examples', completed: false },
+    { id: 0, label: 'Ne pas faire dormir le breizhCamp !', completed: true },
+    { id: 1, label: 'Continuer de les intéresser ...', completed: false },
   ])
 })
 

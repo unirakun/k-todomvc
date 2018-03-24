@@ -26,7 +26,7 @@ const Todos = ({
       </Fragment>
     }
     <ul style={style} className={cn('todo-list', className)}>
-      {todos.map(id => <Todo key={id} id={id} />)}
+      {todos.map(todo => <Todo key={todo.id} {...todo} />)}
     </ul>
   </section>
 )
