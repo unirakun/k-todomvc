@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 
 export default (url) => (WrappedComponent) => {
   return class extends Component {
-    static displayName = 'todoFetch'
+    static displayName = 'todosFetch'
 
     componentWillMount = async () => {
       const raw = await window.fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' } })
-      const {message, subtitle} = await raw.json()
-      const label = `${message}${subtitle}`
+      const data = await raw.json()
       
       this.setState((state) => ({
         ...state,
-        label,
+        data,
       }))
     }
 

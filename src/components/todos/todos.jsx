@@ -9,13 +9,13 @@ const Todos = ({
   style,
   className,
   // data
-  todos,
+  data,
   allCompleted,
   // callbacks
   onCompleteAll,
 }) => (
   <section className="main">
-    {todos.length > 0 &&
+    {data.length > 0 &&
       <Fragment>
         <input
           className="toggle-all"
@@ -26,7 +26,7 @@ const Todos = ({
       </Fragment>
     }
     <ul style={style} className={cn('todo-list', className)}>
-      {todos.map(id => <Todo key={id} id={id} />)}
+      {data.map(todo => <Todo key={todo.id} {...todo} />)}
     </ul>
   </section>
 )
@@ -36,7 +36,7 @@ Todos.propTypes = {
   style: PropTypes.object,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   // data
-  todos: PropTypes.arrayOf(PropTypes.number),
+  data: PropTypes.array,
   allCompleted: PropTypes.bool,
   // callbacks
   onCompleteAll: PropTypes.func,
@@ -47,7 +47,7 @@ Todos.defaultProps = {
   style: undefined,
   className: undefined,
   // data
-  todos: [],
+  data: [],
   allCompleted: false,
   // callbacks
   onCompleteAll: undefined,
