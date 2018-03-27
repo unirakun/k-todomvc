@@ -5,7 +5,7 @@ export default (url) => (WrappedComponent) => {
     static displayName = 'todosFetch'
 
     componentWillMount = async () => {
-      const raw = await window.fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' } })
+      const raw = await window.fetch(url)
       const data = await raw.json()
       
       this.setState((state) => ({
