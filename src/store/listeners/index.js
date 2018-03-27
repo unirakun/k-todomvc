@@ -3,6 +3,7 @@ import { todos, footer } from './reactions'
 
 export default [
   when('@@krml/INIT')(todos.load),
+  when('@@http/TODOS>GET>ENDED')(todos.set),
   when('@@ui/ADD_TODO_KEYDOWN', action => action.payload === 13)(todos.add),
   when('@@ui/ADD_TODO_KEYDOWN', action => action.payload === 27)(todos.clearNew),
   when('@@ui/ADD_TODO_CHANGE')(todos.setNew),

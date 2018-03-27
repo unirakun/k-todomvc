@@ -1,10 +1,11 @@
 import { reaction } from 'k-ramel'
 
-export const load = reaction((action, store) => {
-  store.data.todos.all.set([
-    { id: 1, label: 'write README.md', completed: false },
-    { id: 2, label: 'write other examples', completed: false },
-  ])
+export const load = reaction((action, store, { http }) => {
+  http('TODOS').get('/todos.json')
+})
+
+export const set = reaction(({ payload }, store) => {
+  store.data.todos.all.set(payload)
 })
 
 export const add = reaction((action, store) => {
