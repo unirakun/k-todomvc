@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { onlyUpdateForPropTypes } from 'recompose'
+import NewTodo from '../newTodo'
 import cn from 'classnames'
 
 const Header = ({
@@ -12,12 +13,8 @@ const Header = ({
 }) => (
   <header style={style} className={cn('header', className)}>
     <h1>todos</h1>
-    <input
-      className="new-todo"
-      name="newTodo"
-      placeholder="What needs to be done?"
-      autoFocus
-      value={newTodo}
+    <NewTodo
+      newTodo={newTodo}
       onKeyDown={onKeyDown}
       onChange={onChange}
     />

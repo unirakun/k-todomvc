@@ -1,4 +1,4 @@
-import { CHANGE_NEW_TODO, RESET_NEW_TODO } from '../../constants'
+import { CHANGE_NEW_TODO, RESET_NEW_TODO } from '../actions'
 
 const initialState = ''
 
