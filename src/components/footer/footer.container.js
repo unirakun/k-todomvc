@@ -4,7 +4,6 @@ import Component from './footer'
 
 export default inject(store => ({
   // data
-  ...store.ui.footer.get(),
   // callbacks
   onClearCompleted: () => store.dispatch('@@ui/FOOTER_ON_CLEAR_COMPLETED'),
   onClickAll: () => store.ui.footer.update({ filter: 'all' }),

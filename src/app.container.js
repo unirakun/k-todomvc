@@ -1,15 +1,14 @@
 import App from './app'
 import { connect } from 'react-redux'
-import { getTodos, getNewTodo } from './store/selectors'
-import { onChange, onKeyDown } from './store/actions'
+import { onChange, addNewTodo, resetNewTodo } from './store/actions'
 
 const mapStateToProps = (state) => ({
-  todos: getTodos(state),
-  newTodo: getNewTodo(state),
+  todos: state.data.todos,
+  newTodo: state.ui.newTodo,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onKeyDown: e => dispatch(onKeyDown(e)),
+  onKeyDown: e => e.which === 13 && dispatch(addNewTodo(e)) && dispatch(resetNewTodo(e)),
   onChange: e => dispatch(onChange(e)),
 })
 
