@@ -1,9 +1,8 @@
-import App from './app'
 import { connect } from 'react-redux'
-import { onChange, addNewTodo, resetNewTodo } from './store/actions'
+import { onChange, addNewTodo, resetNewTodo } from '../../store/actions'
+import Component from './newTodo'
 
 const mapStateToProps = (state) => ({
-  todos: state.data.todos,
   newTodo: state.ui.newTodo,
 })
 
@@ -12,4 +11,4 @@ const mapDispatchToProps = (dispatch) => ({
   onChange: e => dispatch(onChange(e)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Component)

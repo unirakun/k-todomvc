@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
 import cn from 'classnames'
 
 const Todo = ({
@@ -76,4 +75,4 @@ Todo.defaultProps = {
   onKeyDown: undefined,
 }
 
-export default onlyUpdateForPropTypes(Todo)
+export default Todo

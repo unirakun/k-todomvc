@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
 
 const NewTodo = ({
   newTodo,
@@ -30,4 +29,4 @@ NewTodo.defaultProps = {
   onChange: undefined,
 }
 
-export default onlyUpdateForPropTypes(NewTodo)
+export default NewTodo

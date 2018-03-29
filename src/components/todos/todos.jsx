@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
 import cn from 'classnames'
 import Todo from '../todo'
 
@@ -26,15 +25,7 @@ const Todos = ({
         </Fragment>
       }
       <ul style={style} className={cn('todo-list', className)}>
-        {todos.map(todo => (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            label={todo.label}
-            completed={todo.completed}
-            editing={todo.editing}
-          />
-        ))}
+        {todos.map(id => <Todo key={id} id={id} />)}
       </ul>
     </section>
   )
@@ -61,4 +52,4 @@ Todos.defaultProps = {
   onCompleteAll: undefined,
 }
 
-export default onlyUpdateForPropTypes(Todos)
+export default Todos
