@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
-import { onChange, addNewTodo, resetNewTodo } from '../../store/actions'
+import newTodo from '../../store/reducers/newTodo'
+import todos from '../../store/reducers/todos'
 import Component from './newTodo'
 
 const mapStateToProps = (state) => ({
-  newTodo: state.ui.newTodo,
+  newTodo: newTodo.get()(state),
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onKeyDown: e => e.which === 13 && dispatch(addNewTodo(e)) && dispatch(resetNewTodo(e)),
-  onChange: e => dispatch(onChange(e)),
+  onKeyDown: e => e.which === 13 && dispatch(todos.add(e.target.value)) && dispatch(newTodo.reset()),
+  onChange: e => dispatch(newTodo.set(e.target.value)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component)
