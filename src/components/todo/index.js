@@ -1,1 +1,1 @@
-export { default } from './todo.container'
+export { default } from './todo'
