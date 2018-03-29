@@ -1,16 +1,3 @@
-import { CHANGE_NEW_TODO, RESET_NEW_TODO } from '../actions'
+import { simpleObject } from 'k-redux-factory'
 
-const initialState = ''
-
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case CHANGE_NEW_TODO:
-      return action.payload
-
-    case RESET_NEW_TODO:
-      return initialState
-
-    default:
-      return state
-  }
-}
+export default simpleObject({ path: 'ui', name: 'newTodo', defaultData: '' })
