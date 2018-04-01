@@ -18,7 +18,7 @@ const setCompleted = ({ payload }, store) => {
 }
 
 const listeners = [
-  when('@@krml/LISTENERS>ADDED')(load),
+  when('@@krml/LISTENERS>ADDED>todos')(load),
   when('@@http/TODOS>GET>ENDED')(set),
   when('@@ui/CLICKED/COMPLETED')(setCompleted),
 ]
@@ -28,6 +28,6 @@ const mapStore = store => ({
 })
 
 export default compose(
-  listen(listeners),
+  listen(listeners, 'todos'),
   inject(mapStore),
 )(Todos)
