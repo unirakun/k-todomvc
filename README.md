@@ -22,8 +22,8 @@
 ## Events
  - [BreizhCamp Rennes, France - SOON in 2018](http://www.breizhcamp.org/)
 
-# About ![alakarte](https://i.imgur.com/PKlqzvj.png)
-**alakarte** is created by two passionate french developers.
+# About ![alakarteio](http://alakarte.io/assets/img/logo.markdown.png)
+**alakarteio** is created by two passionate french developers.
 
 Do you want to contact them ? Go to their [website](http://alakarte.io)
 
