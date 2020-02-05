@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "Fabien JUIF <fabien.juif@gmail.com>",
   "license": "MIT",
-  "homepage": "https://alakarteio.github.io/k-todomvc/",
+  "homepage": "https://unirakun.github.io/k-todomvc/",
   "dependencies": {
     "@k-ramel/react": "^0.11.0",
     "babel-polyfill": "^6.26.0",
